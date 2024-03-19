@@ -186,7 +186,7 @@ def initialization_isosceles_triangle():
     print("Area:", isosceles_triangle.compute_area())
     print("Perimeter:", isosceles_triangle.compute_perimeter())
     print("Inner Angles:", isosceles_triangle.compute_inner_angles())
-    print("Vertices:", isosceles_triangle.compute_vertices)
+    print("Vertices:", isosceles_triangle.compute_vertices())
 
 if __name__ == "__main__":
     #initialization_rectangle()
