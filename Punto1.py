@@ -2,13 +2,19 @@ import math
 
 class Point:
     def __init__(self, x, y):
-        self.x = x
-        self.y = y
+        self.__x = x
+        self.__y = y
+
+    def get_x(self):
+        return self.__x
+
+    def get_y(self):
+        return self.__y
 
 class Line:
     def __init__(self, x1, y1, x2, y2):
-        self.start = Point(x1, y1)
-        self.end = Point(x2, y2)
+        self.__start = Point(x1, y1)
+        self.__end = Point(x2, y2)
         self.length = math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
 
 class Shape:
@@ -55,7 +61,7 @@ class Rectangle(Shape):
         return [90, 90, 90, 90]
     
     def compute_vertices(self):
-        return [self.vertice1.x, self.vertice1.y], [self.vertice2.x, self.vertice2.y], [self.vertice3.x, self.vertice3.y], [self.vertice4.x, self.vertice4.y]
+        return [self.vertice1.get_x(), self.vertice1.get_y()], [self.vertice2.get_x(), self.vertice2.get_y()], [self.vertice3.get_x(), self.vertice3.get_y()], [self.vertice4.get_x(), self.vertice4.get_y()]
 
     def initialization_rectangle():
         x = float(input("Enter the x coordinate for the rectangle's bottom-left corner: "))
@@ -115,9 +121,9 @@ class Triangle(Shape):
         return math.degrees(self.angle1), math.degrees(self.angle2), math.degrees(self.angle3)
     
     def compute_vertices(self):
-        return [(self.vertice1.x, self.vertice1.y),
-                (self.vertice2.x, self.vertice2.y),
-                (self.vertice3.x, self.vertice3.y)]
+        return [(self.vertice1.get_x(), self.vertice1.get_y()),
+                (self.vertice2.get_x(), self.vertice2.get_y()),
+                (self.vertice3.get_x(), self.vertice3.get_y())]
 
 class Isosceles(Triangle):
     def __init__(self, *args):
@@ -193,9 +199,9 @@ class TriRectangle(Triangle):
         print("Vertices:", tri_rectangle.compute_vertices())
 
 if __name__ == "__main__":
-    Rectangle.initialization_rectangle()
-    Square.initialization_square()
-    Equilateral.initialization_equilateral_triangle()
-    TriRectangle.initialization_tri_rectangle()
+    #Rectangle.initialization_rectangle()
+    #Square.initialization_square()
+    #Equilateral.initialization_equilateral_triangle()
+    #TriRectangle.initialization_tri_rectangle()
     Isosceles.initialization_isosceles_triangle()
-    Scalene.initialization_scalene_triangle()
+    #Scalene.initialization_scalene_triangle()
