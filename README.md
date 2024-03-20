@@ -205,13 +205,23 @@ class TriRectangle(Triangle):
         print("Vertices:", tri_rectangle.compute_vertices())
 
 if __name__ == "__main__":
-    #Rectangle.initialization_rectangle()
-    #Square.initialization_square()
-    #Equilateral.initialization_equilateral_triangle()
-    #TriRectangle.initialization_tri_rectangle()
-    #Isosceles.initialization_isosceles_triangle()
-    Scalene.initialization_scalene_triangle()
-```
+    
+    method = int(input("Enter the shape you want to create (1 for equilateral, 2 for isosceles, 3 for triangle rectangle, 4 for scalene, 5 for rectangle, 6 for square): "))
+    if method == 1:
+        Equilateral.initialization_equilateral_triangle()
+    elif method == 2:
+        Isosceles.initialization_isosceles_triangle()
+    elif method == 3:
+        TriRectangle.initialization_tri_rectangle()
+    elif method == 4:
+        Scalene.initialization_scalene_triangle()
+    elif method == 5:
+        Rectangle.initialization_rectangle()
+    elif method == 6:
+        Square.initialization_square()
+    else:
+        print("Invalid option.")
+ ```
 
 ## Punto 2
 
